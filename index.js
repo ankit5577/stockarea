@@ -48,12 +48,6 @@ app.use(morgan("dev"));
 // localhost:3000/api/product/
 app.use("/api/warehouse", WarehouseRoute);
 
-app.use((res, error) => {
-  console.error("error??", error.errors, res);
-  // console.log("error???", error);
-  // res.json({hello})
-});
-
 app.get("*", (req, res, next) => {
   res.sendFile(path.join(__dirname, "react16/build/index.html"));
 });

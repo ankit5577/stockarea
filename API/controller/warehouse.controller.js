@@ -4,13 +4,17 @@ const {
   createWarehouse,
   getWarehouse,
   deleteWarehouse,
+  updateWarehouse,
 } = require("../functions/warehouse.function");
 
 // get all warehouses
 router.get("/all", getAllWarehouse);
 
 // get single warehouse by ID
-router.get("/:id", getWarehouse);
+router.get("/search/:id", getWarehouse);
+
+// update warehouse by id
+router.post("/update/:id", updateWarehouse);
 
 // create warehouse
 router.put("/create", createWarehouse);

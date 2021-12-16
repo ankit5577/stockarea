@@ -4,7 +4,7 @@ const { sendResponse, sendError } = require("./_helper");
 const getAllWarehouse = async (req, res, next) => {
   try {
     const warehouses = await warehouseModel.find({});
-    if (!warehouses) {
+    if (!warehouses || warehouses?.length === 0) {
       sendError(
         {
           title: "no_warehouse",
@@ -12,14 +12,15 @@ const getAllWarehouse = async (req, res, next) => {
         },
         res
       );
+    } else {
+      sendResponse(
+        {
+          msg: "list of warehouse",
+          data: warehouses,
+        },
+        res
+      );
     }
-    sendResponse(
-      {
-        msg: "list of warehouse",
-        data,
-      },
-      res
-    );
   } catch (error) {
     console.log("ERROR at getAllWarehouse");
     sendError(
@@ -43,16 +44,53 @@ const getWarehouse = async (req, res, next) => {
         },
         res
       );
+    } else {
+      sendResponse(
+        {
+          msg: `warehouse ${req.params.id}`,
+          data: warehouse,
+        },
+        res
+      );
     }
-    sendResponse(
+  } catch (error) {
+    console.log("ERROR at getwarehouse");
+    sendError(
       {
-        msg: `warehouse ${req.params.id}`,
-        data,
+        title: "server_error",
+        msg: error,
       },
       res
     );
+  }
+};
+
+// TODO pending
+const updateWarehouse = async (req, res, next) => {
+  try {
+    const updated_warehouse = await warehouseModel.findByIdAndUpdate(
+      req.params.id,
+      req.body
+    );
+    if (!updated_warehouse) {
+      sendError(
+        {
+          title: "no_warehouse",
+          msg: "no Warehouse found",
+        },
+        res
+      );
+    } else {
+      sendResponse(
+        {
+          msg: "Warehouse updated",
+          data: updated_warehouse,
+        },
+        res
+      );
+    }
   } catch (error) {
-    console.log("ERROR at getwarehouse");
+    console.log("ERROR at updateWarehouse");
     sendError(
       {
         title: "server_error",
@@ -75,14 +113,15 @@ const createWarehouse = async (req, res, next) => {
         },
         res
       );
+    } else {
+      sendResponse(
+        {
+          msg: "list of Warehouse",
+          data: exisiting_warehouse,
+        },
+        res
+      );
     }
-    sendResponse(
-      {
-        msg: "list of Warehouse",
-        data,
-      },
-      res
-    );
   } catch (error) {
     console.log("ERROR at createWarehouse");
     sendError(
@@ -107,14 +146,15 @@ const deleteWarehouse = async (req, res, next) => {
         },
         res
       );
+    } else {
+      sendResponse(
+        {
+          msg: "list of Products",
+          data,
+        },
+        res
+      );
     }
-    sendResponse(
-      {
-        msg: "list of Products",
-        data,
-      },
-      res
-    );
   } catch (error) {
     console.log("ERROR at deleteProduct");
     sendError(
@@ -131,5 +171,6 @@ module.exports = {
   getAllWarehouse,
   getWarehouse,
   createWarehouse,
+  updateWarehouse,
   deleteWarehouse,
 };

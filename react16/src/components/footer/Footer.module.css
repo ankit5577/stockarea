@@ -1,0 +1,23 @@
+.footerDiv {
+  background-color: var(--primary-color);
+}
+
+.footerDiv > p {
+  color: rgb(155, 155, 155);
+  font-size: small;
+}
+
+.footerDiv > p > a {
+  font-size: larger;
+}
+
+@media only screen and (max-width: 800px) {
+  .footerDiv {
+    background-color: var(--primary-color);
+    padding: 0;
+    margin: 0;
+  }
+  .footerDiv > p {
+    font-size: small;
+  }
+}

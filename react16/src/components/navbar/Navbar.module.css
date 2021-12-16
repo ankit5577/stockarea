@@ -1,0 +1,19 @@
+.link {
+  align-self: center;
+  padding: 0.5rem;
+  text-align: center;
+  font-weight: 500;
+}
+
+.div {
+  display: flex;
+  flex-direction: row;
+}
+
+nav > .link:hover {
+  transition: ease-in-out;
+  transition-duration: 300ms;
+  background-color: var(--primary-color);
+  border-radius: 4px;
+  color: white;
+}

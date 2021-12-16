@@ -1,7 +1,53 @@
 .imgDiv {
   max-width: 400px;
+  max-height: 440px;
   border-radius: 10px;
   overflow: hidden;
+}
+
+.toggleEditingButton {
+  border: 0;
+  cursor: pointer;
+  background-color: white;
+  font-size: larger;
+}
+
+.form {
+  padding: 1rem;
+  border-radius: 8px;
+  margin: 10px 0;
+  border: 1px solid silver;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+
+.form > div {
+  width: 350px;
+  padding: 5px;
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  justify-content: space-around;
+  margin: 0 auto;
+}
+
+.form > div > label {
+  font-weight: 500;
+  margin-bottom: 5px;
+}
+
+.form > div > input, select {
+  max-width: 300px;
+  outline: 0;
+  border: 0;
+  border-radius: 5px;
+  background-color: whitesmoke;
+  padding: 8px;
+}
+
+.form > div > input:focus {
+  box-shadow: 0 0 2px 1px rgba(47, 33, 206, 0.886);
 }
 
 .mainDiv {
@@ -29,6 +75,24 @@ p {
   border: 1px solid rgb(171, 171, 171);
   background-color: white;
   border-radius: 50px;
+}
+
+.buttonCancel {
+  padding: 12px 40px;
+  font-size: large;
+  border: 1px solid rgb(171, 171, 171);
+  background-color: white;
+  border-radius: 50px;
+}
+
+.buttonCancel:hover {
+  transition: all;
+  transition-duration: 300ms;
+  background-color: var(--secondary-color);
+  box-shadow: 0 0 10px 3px rgba(206, 33, 195, 0.359);
+  cursor: pointer;
+  border: 0;
+  color: white;
 }
 
 .button:hover {
@@ -79,8 +143,8 @@ p {
 }
 
 .not_live {
-    background-color: rgb(228, 0, 53);
-  }
+  background-color: rgb(228, 0, 53);
+}
 
 @-webkit-keyframes pulse {
   0% {

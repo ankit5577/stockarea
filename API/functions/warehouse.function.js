@@ -68,6 +68,7 @@ const getWarehouse = async (req, res, next) => {
 // TODO pending
 const updateWarehouse = async (req, res, next) => {
   try {
+    console.log(req.body, req.params.id);
     const updated_warehouse = await warehouseModel.findByIdAndUpdate(
       req.params.id,
       req.body

@@ -16,7 +16,10 @@ function App() {
 
   return (
     <div className="flex flex-col min-h-screen overflow-hidden">
-      <Navbar sidebarToggle={() => setToggleSidebar(!toggleSidebar)} />
+      <Navbar
+        filterItems={console.log}
+        sidebarToggle={() => setToggleSidebar(!toggleSidebar)}
+      />
       <div className="flex-1 flex flex-row">
         <Sidebar sidebarToggle={toggleSidebar} />
         <div className={`App flex-1 ${toggleSidebar ? "mainDiv" : ""}`}>

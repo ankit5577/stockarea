@@ -5,6 +5,9 @@
   font-weight: 500;
 }
 
+.input {
+}
+
 .div {
   display: flex;
   flex-direction: row;

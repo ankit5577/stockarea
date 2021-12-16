@@ -54,7 +54,7 @@
   padding: 0.5rem;
 }
 
-.underSubHeader > p{
+.underSubHeader > p {
   padding: 0 0.1rem;
   font-size: small;
   margin: 0;
@@ -123,7 +123,6 @@
   color: rgb(75, 75, 75);
 }
 
-
 .codeDiv > div > p {
   border-radius: 50px;
   background-color: silver;
@@ -166,7 +165,7 @@
     overflow: hidden;
   }
 
-  .underSubHeader > p{
+  .underSubHeader > p {
     font-size: small;
   }
 

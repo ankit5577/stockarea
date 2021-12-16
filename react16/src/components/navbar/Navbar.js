@@ -17,7 +17,9 @@ function Navbar(props) {
         <Link to={"/"}>
           <h1 className="heading-2 m-2">🌍 STOCKAREA</h1>
         </Link>
-        <div className="flex-1"></div>
+        <div className="flex-1">
+          {/* <input className={`${style.input}`} /> */}
+        </div>
         <nav className={`${style.link} flex flex-row flex-wrap gap-2 m-2`}>
           <Link to={"/"} className="list">
             Home

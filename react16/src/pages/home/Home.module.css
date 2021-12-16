@@ -68,10 +68,10 @@
   align-self: center;
   margin: 0 5px;
 }
+
 .live {
-  top: 0.5rem;
-  right: 0.5rem;
-  border: 1px solid white;
+  top: 0.8rem;
+  right: 0.8rem;
   background-color: var(--danger-color);
 }
 

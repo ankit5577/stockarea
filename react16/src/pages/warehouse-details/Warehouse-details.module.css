@@ -1,0 +1,131 @@
+.imgDiv {
+  max-width: 400px;
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+.mainDiv {
+  display: flex;
+  flex-direction: row;
+  gap: 1rem;
+}
+
+.imgDiv > img {
+  object-fit: contain;
+  width: 100%;
+}
+
+.detailsDiv > h2,
+h1,
+h3,
+p {
+  padding: 0;
+  margin: 0;
+}
+
+.button {
+  padding: 12px 40px;
+  font-size: large;
+  border: 1px solid rgb(171, 171, 171);
+  background-color: white;
+  border-radius: 50px;
+}
+
+.button:hover {
+  transition: all;
+  transition-duration: 300ms;
+  background-color: var(--primary-color);
+  box-shadow: 0 0 10px 3px rgba(36, 33, 206, 0.359);
+  cursor: pointer;
+  border: 0;
+  color: white;
+}
+
+.registeredDiv {
+  position: absolute;
+  width: 100%;
+  background-color: rgb(5, 152, 15);
+  bottom: 0;
+  text-align: center;
+  padding: 0.2rem;
+  color: white;
+  box-shadow: 0 0 10px 10px rgb(5, 152, 15);
+}
+
+.notRegisteredDiv {
+  position: absolute;
+  width: 100%;
+  background-color: rgb(152, 7, 5);
+  bottom: 0;
+  text-align: center;
+  padding: 0.2rem;
+  color: white;
+  box-shadow: 0 0 10px 10px rgb(152, 7, 5);
+}
+
+.liveDiv {
+  position: absolute;
+  padding: 0.5rem;
+  background-color: red;
+  top: 15px;
+  right: 20px;
+  border-radius: 100%;
+  border: 1px solid white;
+}
+
+.is_live {
+  background-color: rgb(0, 228, 15);
+  animation: pulse 2s infinite;
+}
+
+.not_live {
+    background-color: rgb(228, 0, 53);
+  }
+
+@-webkit-keyframes pulse {
+  0% {
+    -webkit-box-shadow: 0 0 0 0 rgba(65, 204, 44, 0.7);
+  }
+  50% {
+    -webkit-box-shadow: 0 0 0 10px rgba(1, 6, 2, 0.4);
+  }
+  70% {
+    -webkit-box-shadow: 0 0 0 10px rgba(1, 6, 2, 0);
+  }
+  100% {
+    -webkit-box-shadow: 0 0 0 0 rgba(92, 204, 44, 0);
+  }
+}
+@keyframes pulse {
+  0% {
+    -moz-box-shadow: 0 0 0 0 rgba(65, 204, 44, 0.7);
+    box-shadow: 0 0 0 0 rgba(65, 204, 44, 0.7);
+  }
+  50% {
+    -moz-box-shadow: 0 0 0 10px rgba(44, 204, 84, 0.4);
+    box-shadow: 0 0 0 10px rgba(44, 204, 84, 0.4);
+  }
+  70% {
+    -moz-box-shadow: 0 0 0 10px rgba(44, 204, 84, 0);
+    box-shadow: 0 0 0 10px rgba(44, 204, 84, 0);
+  }
+  100% {
+    -moz-box-shadow: 0 0 0 0 rgba(92, 204, 44, 0);
+    box-shadow: 0 0 0 0 rgba(92, 204, 44, 0);
+  }
+}
+
+@media only screen and (max-width: 800px) {
+  .mainDiv {
+    flex-direction: column;
+  }
+
+  .actionDiv {
+    margin: 0 auto;
+  }
+
+  .imgDiv {
+    width: 100%;
+    margin: 0 auto;
+  }
+}

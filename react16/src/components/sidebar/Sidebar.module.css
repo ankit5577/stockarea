@@ -1,0 +1,21 @@
+.sideDiv {
+  display: fixed;
+  border-top: 0px;
+  transition: ease-in-out;
+  transition-duration: 300ms;
+}
+
+.displayNone {
+  transition: ease-in-out;
+  transition-duration: 300ms;
+  transform: translateX(-250px);
+  display: none;
+}
+
+.sidenavWidth {
+  width: 250px;
+  border-top: 0px;
+}
+
+@media only screen and (max-width: 800px) {
+}

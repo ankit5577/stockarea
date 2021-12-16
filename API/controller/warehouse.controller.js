@@ -1,17 +1,21 @@
 const router = require("express").Router();
-const {} = require("../functions/warehouse.function");
-const warehouseModel = require('../models/warehouse.model');
+const {
+  getAllWarehouse,
+  createWarehouse,
+  getWarehouse,
+  deleteWarehouse,
+} = require("../functions/warehouse.function");
 
-// get all products
-// router.get("/all", getAllProducts);
+// get all warehouses
+router.get("/all", getAllWarehouse);
 
-// // get single product by ID
-// router.get("/:id", getProduct);
+// get single warehouse by ID
+router.get("/:id", getWarehouse);
 
-// // create product
-// router.put("/create", createProduct);
+// create warehouse
+router.put("/create", createWarehouse);
 
-// // delete product by ID
-// router.delete("/delete", deleteProduct);
+// delete warehouse by ID
+router.delete("/delete", deleteWarehouse);
 
 module.exports = router;

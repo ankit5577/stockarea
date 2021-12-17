@@ -23,6 +23,7 @@
   },
   "homepage": "https://github.com/ankit5577/stockarea#readme",
   "dependencies": {
+    "@types/react-redux": "^7.1.20",
     "cors": "^2.8.5",
     "dotenv": "^10.0.0",
     "express": "^4.17.1",

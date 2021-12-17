@@ -125,11 +125,11 @@ a {
   color: rgb(0, 189, 0);
 }
 .font-lighter {
-  font-weight: 200;
+  font-weight: 300;
 }
 
 .font-light {
-  font-weight: 300;
+  font-weight: 400;
 }
 
 .font-medium {
@@ -208,6 +208,18 @@ a {
   color: rgb(26, 26, 26);
 }
 
+.mt-2 {
+  margin-top: 0.5rem;
+}
+
+.mt-4 {
+  margin-top: 1rem;
+}
+
+.mt-6 {
+  margin-top: 1.5rem;
+}
+
 .text-primary {
   color: var(--primary-color);
 }
@@ -252,9 +264,9 @@ a {
   }
 
   .mainDiv {
-    transition: ease-in-out;
+    transition: all;
     transition-duration: 300ms;
-    transform: translateX(50px);
+    transform: translateX(100px);
   }
 
   .heading-2 {

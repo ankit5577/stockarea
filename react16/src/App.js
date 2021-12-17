@@ -22,8 +22,8 @@ function App() {
       />
       <div className="flex-1 flex flex-row relative">
         <Sidebar sidebarToggle={toggleSidebar} />
-        <div className={`App flex-1 ${toggleSidebar ? "mainDiv" : ""}`}>
-          <Routes>
+        <div className={`App flex-1 ${toggleSidebar ? "mainDiv" : ""} mt-6`}>
+          <Routes className=''>
             <Route
               path="/"
               element={

@@ -47,7 +47,7 @@
   letter-spacing: 1.3px;
 }
 
-.listDiv:hover{
+.listDiv:hover {
   transition: all;
   transition-duration: 400ms;
   box-shadow: 0 0 12px rgb(224, 224, 224);
@@ -69,12 +69,12 @@
 
 .underSubHeader > p {
   padding: 0 0.1rem;
-  font-size: small;
+  font-size: medium;
   margin: 0;
 }
 
 .underSubHeader > p > span {
-  font-size: medium;
+  font-size: large;
 }
 
 .registeredLabel {
@@ -131,7 +131,6 @@
 }
 
 .codeDiv {
-  font-size: small;
   font-weight: 700;
   color: rgb(75, 75, 75);
 }
@@ -140,7 +139,7 @@
   border-radius: 50px;
   background-color: silver;
   padding: 0.5rem;
-  font-size: x-small;
+  font-size: 12px;
   margin: 0;
 }
 
@@ -172,7 +171,7 @@
   }
 
   .imgDiv {
-    max-width: 100px;
+    max-width: 150px;
     height: 100%;
     background-color: rgb(28, 28, 28);
     overflow: hidden;

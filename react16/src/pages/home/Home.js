@@ -1,4 +1,4 @@
-import React, { useCallback, useEffect, useState } from "react";
+import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import Loading from "../../components/loading/Loading";
 import useHttp from "../../services/Hooks/use-http";
@@ -79,7 +79,7 @@ function HomePage() {
       {!fetching && warehouses.length > 0 && (
         <div>
           {" "}
-          <h1 className={`heading-1 font-light letter-spacing-2`}>
+          <h1 className={`heading-1 font-lighter letter-spacing-2 my-4`}>
             List of Warehouse
           </h1>
           {warehouses?.map((warehouse) => (
@@ -116,7 +116,7 @@ function HomePage() {
               </div>
               <div className="flex-1 p-2">
                 <div className={`${style.headingDiv}`}>
-                  <h2 className="heading-3 font-medium">{warehouse.name}</h2>
+                  <h2 className="heading-2 font-light">{warehouse.name}</h2>
                   <div className="flex">
                     <span className={`${style.registeredLabel}`}>
                       {warehouse.is_registered ? (
@@ -152,7 +152,7 @@ function HomePage() {
                     </p>
                     <p className={`text-left text-grey`}>
                       Space Available:{" "}
-                      <span className="text-primary ">
+                      <span className="text-primary font-light">
                         {warehouse.space_available}
                       </span>
                     </p>

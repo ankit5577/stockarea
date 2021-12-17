@@ -1,5 +1,4 @@
-@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@100;200;300;400;500;600;700;800;900&display=swap");
-@import url("https://fonts.googleapis.com/css2?family=Raleway:wght@100;200;300;400&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Nunito:wght@200;400;500&family=Montserrat:wght@100;200;300;400;500;600;700;800;900&family=Raleway:wght@100;200;300;400&family=Quicksand:wght@300;400;500&display=swap");
 
 :root {
   --primary-color: rgb(0, 51, 204);
@@ -42,8 +41,24 @@ a {
   color: red;
 }
 
+.box-shadow {
+  box-shadow: 0 0 12px rgb(224, 224, 224);
+}
+
+.rounded-full {
+  border-radius: 100%;
+}
+
 .numberFont {
   font-family: "Raleway", "Montserrat", sans-serif;
+}
+
+.font-nunito {
+  font-family: "Nunito", "Montserrat", "Raleway", sans-serif;
+}
+
+.font-quicksand {
+  font-family: "Quicksand", "Nunito", "Montserrat", "Raleway", sans-serif;
 }
 
 .mx-auto {

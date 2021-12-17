@@ -4,25 +4,52 @@ import { Link } from "react-router-dom";
 import { GiHamburgerMenu } from "react-icons/gi";
 import { FaWarehouse } from "react-icons/fa";
 import { AiFillHome } from "react-icons/ai";
+import { useNavigate } from "react-router";
 
-var timeout;
+import { filterWarehousesStore } from "../../services/warehouse/warehouseSlice";
+import { useDispatch } from "react-redux";
+
+var stockarea_search_timeout;
 function Navbar(props) {
-  function filterSearchHandler(value) {
-    // reduce calls
-    if (timeout) {
-      console.log("clearing timeout");
-      clearTimeout(timeout);
+  const dispatch = useDispatch();
+  const navigate = useNavigate();
+
+  const dispatchFilterWarehouse = (data) => {
+    dispatch(
+      filterWarehousesStore({
+        type: "SEARCH_PRODUCT",
+        data: data.trim().toLowerCase(),
+      })
+    );
+  };
+
+  function filterSearchHandler(e) {
+    if (e.which === 13) {
+      // search on Enter Keypress
+      console.log("searching ");
+      navigate("/");
+      setTimeout(() => {
+        dispatchFilterWarehouse(e.target.value);
+      }, 500);
+    } else {
+      // using DEBOUNCE to reduce search calls
+      if (stockarea_search_timeout) {
+        clearTimeout(stockarea_search_timeout);
+      }
+      stockarea_search_timeout = setTimeout(() => {
+        dispatchFilterWarehouse(e.target.value);
+      }, 1000);
     }
-    timeout = setTimeout(() => {
-      props.filterItems(value);
-    }, 500);
   }
   return (
     <header>
       <div className={`container mx-auto ${style.div} p-2`}>
         <div className="flex">
-          <button className="self-center" onClick={props.sidebarToggle}>
-            <GiHamburgerMenu className={`${style.navButton}`} />
+          <button
+            className="self-center rounded-full "
+            onClick={props.sidebarToggle}
+          >
+            <GiHamburgerMenu className={`${style.navButton} box-shadow`} />
           </button>
         </div>
         <Link to={"/"}>
@@ -33,13 +60,16 @@ function Navbar(props) {
         </Link>
         <div className="flex-1 flex">
           <input
-            className={`${style.input}`}
-            onKeyPress={(e) => filterSearchHandler(e.target.value)}
+            placeholder="Search literally anything...."
+            className={`${style.input} smooth-font`}
+            onKeyPress={(e) => filterSearchHandler(e)}
           />
         </div>
         <nav className={`${style.link} flex flex-row flex-wrap gap-2 m-2`}>
           <Link to={"/"} className={`${style.link}`}>
-            <AiFillHome className={`${style.navIcon}`} />
+            <AiFillHome
+              className={`${style.navIcon} box-shadow rounded-full`}
+            />
           </Link>
         </nav>
       </div>

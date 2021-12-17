@@ -98,7 +98,7 @@ function WarehouseDetailsPage() {
                 }`}
               >
                 {warehouse.is_registered
-                  ? "REGISTERED ✅"
+                  ? `REGISTERED ✅`
                   : `NOT REGISTERED ❌`}
               </div>
               <div

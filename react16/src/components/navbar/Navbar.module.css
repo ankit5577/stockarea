@@ -13,13 +13,29 @@
   padding: 12px;
 }
 
+.input:placeholder-shown {
+  font-weight: 700;
+  letter-spacing: 1.1px;
+  font-family: "Montserrat";
+  border: 0;
+  box-shadow: 0 0 12px rgb(224, 224, 224);
+}
+
 .navButton {
   font-size: 20px;
-  padding: 0.2rem;
+  border-radius: 100%;
+  padding: 0.5rem;
+}
+
+.navButton:hover {
+  transition: ease-in-out;
+  transition-duration: 300ms;
+  color: var(--primary-color);;
 }
 
 .navIcon {
   font-size: 22px;
+  padding: 0.5rem;
 }
 
 .div {
@@ -50,5 +66,12 @@ nav > .link:hover {
 @media only screen and (max-width: 800px) {
   .title {
     display: none;
+  }
+
+  .input:placeholder-shown {
+    font-weight: 500;
+    letter-spacing: 1px;
+    font-family: "Montserrat";
+    box-shadow: 0 0 8px rgb(224, 224, 224);
   }
 }

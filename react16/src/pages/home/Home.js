@@ -86,7 +86,7 @@ function HomePage() {
             <Link
               to={`/warehouse/${warehouse._id}`}
               key={warehouse._id}
-              className={`flex flex-row gap-2 border mx-2 border-radius-lg`}
+              className={`flex flex-row gap-2 border mx-2 border-radius-lg ${style.listDiv}`}
             >
               <div className="m-2 relative">
                 <div className={`${style.imgDiv}`}>

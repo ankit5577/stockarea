@@ -21,6 +21,9 @@
   border: 1px solid rgb(213, 213, 213);
   border-radius: 8px;
   padding: 12px;
+  font-family: "Montserrat";
+  font-weight: 600;
+  letter-spacing: 1.2px;
 }
 
 .input:placeholder-shown {
@@ -35,6 +38,7 @@
   font-size: 20px;
   border-radius: 100%;
   padding: 0.5rem;
+  cursor: pointer;
 }
 
 .navButton:hover {
@@ -58,12 +62,6 @@
   border: 0px;
   padding: 4px 5px;
   background-color: white;
-}
-
-.div > div > button:hover {
-  border-radius: 50px;
-  background-color: whitesmoke;
-  cursor: pointer;
 }
 
 nav > .link:hover {

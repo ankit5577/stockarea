@@ -57,7 +57,7 @@ function Navbar(props) {
           </button>
         </div>
         <button className={`${style.logoButton}`} onClick={navigateHome}>
-          <h1 className="heading-2 m-2 flex gap-2">
+          <h1 className="heading-2 m-2 flex gap-2 text-primary">
             <FaWarehouse className="self-center" />{" "}
             <span className={`${style.title}`}>STOCKAREA</span>
           </h1>

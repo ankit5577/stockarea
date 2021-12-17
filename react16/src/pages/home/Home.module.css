@@ -47,6 +47,12 @@
   letter-spacing: 1.3px;
 }
 
+.listDiv:hover{
+  transition: all;
+  transition-duration: 400ms;
+  box-shadow: 0 0 12px rgb(224, 224, 224);
+}
+
 .disabled {
   position: absolute;
   top: 0;

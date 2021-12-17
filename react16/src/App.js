@@ -20,7 +20,7 @@ function App() {
         filterItems={console.log}
         sidebarToggle={() => setToggleSidebar(!toggleSidebar)}
       />
-      <div className="flex-1 flex flex-row">
+      <div className="flex-1 flex flex-row relative">
         <Sidebar sidebarToggle={toggleSidebar} />
         <div className={`App flex-1 ${toggleSidebar ? "mainDiv" : ""}`}>
           <Routes>

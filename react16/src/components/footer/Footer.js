@@ -1,5 +1,6 @@
 import React from "react";
 import style from "./Footer.module.css";
+import { FaUserCheck } from "react-icons/fa";
 
 function Footer() {
   return (
@@ -12,7 +13,8 @@ function Footer() {
           rel="noreferrer"
           href="https://github.com/ankit5577"
         >
-          {" "}Ankit5577 🧑🏽‍💻
+          {" "}
+          Ankit5577 <FaUserCheck />
         </a>
       </p>
     </footer>

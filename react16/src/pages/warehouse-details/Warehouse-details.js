@@ -32,7 +32,7 @@ function WarehouseDetailsPage() {
     ) {
       alert("invalid request");
     } else {
-      fetch(`api/warehouse/update/${id}`, {
+      fetch(`/api/warehouse/update/${id}`, {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
@@ -48,8 +48,9 @@ function WarehouseDetailsPage() {
     }
   };
   useEffect(() => {
+    const url = `/api/warehouse/search/${id}`
     setIsLoading(() => true);
-    fetch(`api/warehouse/search/${id}`)
+    fetch(url)
       .then((response) => response.json())
       .then((reponse) => setWarehouse(() => reponse.data))
       .then(() => setIsLoading(() => false));

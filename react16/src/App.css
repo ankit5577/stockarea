@@ -13,6 +13,15 @@ body {
   margin: 0;
 }
 
+.smooth-font {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.text-dark-grey {
+  color: rgb(61, 61, 61);
+}
+
 html {
   scroll-behavior: smooth;
 }
@@ -23,6 +32,14 @@ body {
 
 a {
   text-decoration: none;
+}
+
+.self-center {
+  align-self: center;
+}
+
+.color-red {
+  color: red;
 }
 
 .numberFont {
@@ -81,10 +98,17 @@ a {
   gap: 1rem;
 }
 
+.icon {
+  font-size: 20px;
+}
+
 .letter-spacing-2 {
   letter-spacing: 0.2rem;
 }
 
+.color-green {
+  color: rgb(0, 189, 0);
+}
 .font-lighter {
   font-weight: 200;
 }

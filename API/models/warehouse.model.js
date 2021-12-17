@@ -10,6 +10,7 @@ const WarehouseSchema = new mongoose.Schema({
   code: {
     type: String,
     required: [true, "code field is required"],
+    trim: true,
   },
   id: {
     type: Number,
@@ -19,11 +20,13 @@ const WarehouseSchema = new mongoose.Schema({
     type: String,
     required: false,
     default: "https://stockarea.io/assets/user/images/home/storage.jpg",
+    trim: true,
   },
   city: {
     type: String,
     trim: true,
     required: [true, "city field is required"],
+    trim: true,
   },
   space_available: {
     type: Number,
@@ -32,9 +35,11 @@ const WarehouseSchema = new mongoose.Schema({
   type: {
     type: String,
     required: [true, "type field is required"],
+    trim: true,
   },
   cluster: {
     type: String,
+    trim: true,
     required: [true, "cluster field is required"],
   },
   is_registered: {

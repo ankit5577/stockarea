@@ -1,8 +1,8 @@
 .link {
   align-self: center;
-  padding: 0.5rem;
   text-align: center;
   font-weight: 500;
+  color: black;
 }
 
 .input {
@@ -11,6 +11,15 @@
   border: 1px solid rgb(213, 213, 213);
   border-radius: 8px;
   padding: 12px;
+}
+
+.navButton {
+  font-size: 20px;
+  padding: 0.2rem;
+}
+
+.navIcon {
+  font-size: 22px;
 }
 
 .div {
@@ -33,10 +42,9 @@
 
 nav > .link:hover {
   transition: ease-in-out;
-  transition-duration: 300ms;
-  background-color: var(--primary-color);
+  transition-duration: 200ms;
+  color: var(--primary-color);
   border-radius: 4px;
-  color: white;
 }
 
 @media only screen and (max-width: 800px) {

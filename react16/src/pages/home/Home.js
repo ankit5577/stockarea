@@ -3,6 +3,8 @@ import { Link } from "react-router-dom";
 import Loading from "../../components/loading/Loading";
 import useHttp from "../../services/Hooks/use-http";
 import style from "./Home.module.css";
+import { ImCross } from "react-icons/im";
+import { TiTick } from "react-icons/ti";
 
 function HomePage() {
   const [warehouses, setWarehouses] = useState([]);
@@ -65,7 +67,11 @@ function HomePage() {
                   <h2 className="heading-3 font-medium">{warehouse.name}</h2>
                   <div className="flex">
                     <span className={`${style.registeredLabel}`}>
-                      {warehouse.is_registered ? "✅" : "☑️"}
+                      {warehouse.is_registered ? (
+                        <TiTick className="color-green self-center icon" />
+                      ) : (
+                        <ImCross className="color-red self-center icon" />
+                      )}
                     </span>
                   </div>
                 </div>

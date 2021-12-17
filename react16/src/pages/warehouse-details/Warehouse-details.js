@@ -1,4 +1,7 @@
 import React, { useEffect, useState } from "react";
+import { ImCross } from "react-icons/im";
+import { TiTick } from "react-icons/ti";
+
 import { useNavigate, useParams } from "react-router";
 import Loading from "../../components/loading/Loading";
 import useHttp from "../../services/Hooks/use-http";
@@ -74,7 +77,7 @@ function WarehouseDetailsPage() {
       {isLoading && <Loading />}
       {!isLoading && (
         <div className="">
-          <h1 className={`heading-1 font-light letter-spacing-2`}>
+          <h1 className={`heading-1 font-light letter-spacing-2 smooth-font`}>
             Warehouse Details
           </h1>
           <div className={`${style.mainDiv} p-2`}>
@@ -96,7 +99,7 @@ function WarehouseDetailsPage() {
               >
                 {warehouse.is_registered
                   ? "REGISTERED ✅"
-                  : "NOT REGISTERED ❌"}
+                  : `NOT REGISTERED ❌`}
               </div>
               <div
                 className={`${style.liveDiv} ${
@@ -107,10 +110,17 @@ function WarehouseDetailsPage() {
 
             {!isEdit && (
               <div className={`${style.detailsDiv} flex-1 flex flex-col gap-2`}>
-                <h1>
-                  {warehouse.name} {warehouse.is_registered ? "✅" : "☑️"}
+                <h1 className="smooth-font text-dark-grey">
+                  {warehouse.name}{" "}
+                  {warehouse.is_registered ? (
+                    <TiTick className="color-green self-center" />
+                  ) : (
+                    <ImCross className="color-red self-center" />
+                  )}
                 </h1>
-                <h2 className="heading-3">📍{warehouse.city}, India 🇮🇳</h2>
+                <h2 className="heading-3 text-dark-grey smooth-font">
+                  📍{warehouse.city}, India 🇮🇳
+                </h2>
                 <h3 className="heading-3 font-medium text-primary">
                   📦 Available Space:{" "}
                   <span className="font-bold text-grey numberFont">
@@ -150,7 +160,7 @@ function WarehouseDetailsPage() {
                   🔍 Registered:{" "}
                   <span className="font-bold text-grey numberFont">
                     {" "}
-                    {warehouse.is_registered ? "Yes 🤩" : "No 😶‍🌫️"}
+                    {warehouse.is_registered ? "Yes" : "No"}
                   </span>
                 </p>
                 <div className={`${style.actionDiv}`}>

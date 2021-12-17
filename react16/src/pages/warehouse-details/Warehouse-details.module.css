@@ -47,7 +47,7 @@
 select {
   max-width: 300px;
   outline: 0;
-  border: 0;
+  border: 1px solid silver;
   border-radius: 5px;
   background-color: whitesmoke;
   padding: 8px;

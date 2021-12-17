@@ -5,6 +5,7 @@ import useHttp from "../../services/Hooks/use-http";
 import style from "./Home.module.css";
 import { ImCross } from "react-icons/im";
 import { TiTick } from "react-icons/ti";
+import notFoundImage from "../../assets/images/not_found.svg";
 
 import { useSelector, useDispatch } from "react-redux";
 import { fetchWarehousesStore } from "../../services/warehouse/warehouseSlice";
@@ -50,7 +51,7 @@ function HomePage() {
   }, [originalWarehouseList]);
 
   useEffect(() => {
-    // check if filtered warehouses exists\
+    // check if filtered warehouses exists.
     if (filteredWarehouses.length === 0) {
       setNotFound(() => true);
     }
@@ -61,7 +62,16 @@ function HomePage() {
     <div className="flex flex-col container mx-auto p-2">
       {/* no filtered products found */}
       {!fetching && notFound && warehouses.length === 0 && (
-        <h1 className="heading-2 text-dark-grey text-center">No Product found.</h1>
+        <div className="p-2 mx-auto">
+          <img
+            className={`${style.notFoundImage}`}
+            alt="not found"
+            src={notFoundImage}
+          />
+          <h1 className="heading-2 text-dark-grey text-center">
+            No Product found.
+          </h1>
+        </div>
       )}
       {/* loading component */}
       {(fetching || !warehouses) && <Loading />}
@@ -76,7 +86,7 @@ function HomePage() {
             <Link
               to={`/warehouse/${warehouse._id}`}
               key={warehouse._id}
-              className="flex flex-row gap-2 border mx-2 border-radius-lg"
+              className={`flex flex-row gap-2 border mx-2 border-radius-lg`}
             >
               <div className="m-2 relative">
                 <div className={`${style.imgDiv}`}>

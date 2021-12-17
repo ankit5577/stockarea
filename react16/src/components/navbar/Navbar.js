@@ -14,6 +14,10 @@ function Navbar(props) {
   const dispatch = useDispatch();
   const navigate = useNavigate();
 
+  const navigateHome = () => {
+    navigate("/");
+  };
+
   const dispatchFilterWarehouse = (data) => {
     dispatch(
       filterWarehousesStore({
@@ -52,25 +56,25 @@ function Navbar(props) {
             <GiHamburgerMenu className={`${style.navButton} box-shadow`} />
           </button>
         </div>
-        <Link to={"/"}>
+        <button className={`${style.logoButton}`} onClick={navigateHome}>
           <h1 className="heading-2 m-2 flex gap-2">
             <FaWarehouse className="self-center" />{" "}
             <span className={`${style.title}`}>STOCKAREA</span>
           </h1>
-        </Link>
+        </button>
         <div className="flex-1 flex">
           <input
             placeholder="Search literally anything...."
             className={`${style.input} smooth-font`}
-            onKeyPress={(e) => filterSearchHandler(e)}
+            onKeyUp={(e) => filterSearchHandler(e)}
           />
         </div>
         <nav className={`${style.link} flex flex-row flex-wrap gap-2 m-2`}>
-          <Link to={"/"} className={`${style.link}`}>
+          <button onClick={navigateHome} className={`${style.link}`}>
             <AiFillHome
               className={`${style.navIcon} box-shadow rounded-full`}
             />
-          </Link>
+          </button>
         </nav>
       </div>
     </header>

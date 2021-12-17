@@ -25,6 +25,10 @@
   border-bottom-right-radius: 6px;
 }
 
+.notFoundImage {
+  max-width: 350px;
+}
+
 .subheading {
   display: flex;
   flex-direction: row;

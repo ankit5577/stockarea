@@ -3,6 +3,16 @@
   text-align: center;
   font-weight: 500;
   color: black;
+  border: 0;
+  border-radius: 100%;
+  background-color: white;
+  cursor: pointer;
+}
+
+.logoButton {
+  border: 0;
+  background-color: white;
+  cursor: pointer;
 }
 
 .input {
@@ -30,7 +40,7 @@
 .navButton:hover {
   transition: ease-in-out;
   transition-duration: 300ms;
-  color: var(--primary-color);;
+  color: var(--primary-color);
 }
 
 .navIcon {

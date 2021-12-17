@@ -23,6 +23,7 @@ export const warehouseSlice = createSlice({
     },
     fetchWarehousesStore: (state, action) => {
       state.originalWarehouses = action.payload.data;
+      state.filteredWarehouses = action.payload.data;
     },
   },
 });

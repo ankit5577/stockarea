@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { useNavigate, useParams } from "react-router";
 import Loading from "../../components/loading/Loading";
+import useHttp from "../../services/Hooks/use-http";
 import style from "./Warehouse-details.module.css";
 
 function WarehouseDetailsPage() {
@@ -10,6 +11,30 @@ function WarehouseDetailsPage() {
   const [updatedWarehouse, setUpdatedWarehouse] = useState({});
   const [isLoading, setIsLoading] = useState(false);
   const [isEdit, setIsEdit] = useState(false);
+
+  const {
+    isLoading: updatingWarehouse,
+    error: errorUpdatingWarehouse,
+    sendRequest: updateWarehouse,
+  } = useHttp(
+    `/warehouse/update/${id}`,
+    {
+      method: "POST",
+      body: updatedWarehouse,
+    },
+    () => {
+      alert("Warehouse updated");
+      navigate("/");
+    }
+  );
+
+  const {
+    isLoading: fetchingWarehouse,
+    error: errorWarehouse,
+    sendRequest: fetchingSingleWarehouse,
+  } = useHttp(`/warehouse/search/${id}`, {}, (data) => {
+    setWarehouse(() => data);
+  });
 
   const updateFormHandler = (target) => {
     setUpdatedWarehouse(() => {
@@ -32,28 +57,12 @@ function WarehouseDetailsPage() {
     ) {
       alert("invalid request");
     } else {
-      fetch(`/api/warehouse/update/${id}`, {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify(updatedWarehouse),
-      })
-        .then((response) => response.json())
-        .then((response) => console.log(response))
-        .then(() => {
-          alert("Warehouse updated");
-          navigate("/");
-        });
+      updateWarehouse();
     }
   };
+
   useEffect(() => {
-    const url = `/api/warehouse/search/${id}`
-    setIsLoading(() => true);
-    fetch(url)
-      .then((response) => response.json())
-      .then((reponse) => setWarehouse(() => reponse.data))
-      .then(() => setIsLoading(() => false));
+    fetchingSingleWarehouse();
   }, [id]);
 
   useEffect(() => {

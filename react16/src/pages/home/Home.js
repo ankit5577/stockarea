@@ -1,24 +1,27 @@
 import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import Loading from "../../components/loading/Loading";
+import useHttp from "../../services/Hooks/use-http";
 import style from "./Home.module.css";
 
 function HomePage() {
   const [warehouses, setWarehouses] = useState([]);
-  const [isLoading, setIsLoading] = useState(false);
+  const {
+    isLoading: fetching,
+    error,
+    sendRequest: fetchWarehouse,
+  } = useHttp("/warehouse/all", {}, (data) => {
+    setWarehouses(() => data);
+  });
 
   useEffect(() => {
-    setIsLoading(() => true);
-    fetch("/api/warehouse/all")
-      .then((response) => response.json())
-      .then((response) => setWarehouses(() => response.data))
-      .then(() => setIsLoading(() => false));
+    fetchWarehouse();
   }, []);
 
   return (
     <div className="flex flex-col container mx-auto p-2">
-      {isLoading && <Loading />}
-      {!isLoading && (
+      {fetching && <Loading />}
+      {!fetching && (
         <div>
           {" "}
           <h1 className={`heading-1 font-light letter-spacing-2`}>

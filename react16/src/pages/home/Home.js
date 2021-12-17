@@ -9,7 +9,7 @@ function HomePage() {
 
   useEffect(() => {
     setIsLoading(() => true);
-    fetch("http://localhost:3000/api/warehouse/all")
+    fetch("api/warehouse/all")
       .then((response) => response.json())
       .then((response) => setWarehouses(() => response.data))
       .then(() => setIsLoading(() => false));

@@ -32,7 +32,7 @@ function WarehouseDetailsPage() {
     ) {
       alert("invalid request");
     } else {
-      fetch(`http://localhost:3000/api/warehouse/update/${id}`, {
+      fetch(`api/warehouse/update/${id}`, {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
@@ -49,7 +49,7 @@ function WarehouseDetailsPage() {
   };
   useEffect(() => {
     setIsLoading(() => true);
-    fetch(`http://localhost:3000/api/warehouse/search/${id}`)
+    fetch(`api/warehouse/search/${id}`)
       .then((response) => response.json())
       .then((reponse) => setWarehouse(() => reponse.data))
       .then(() => setIsLoading(() => false));

@@ -28,7 +28,6 @@ export const warehouseSlice = createSlice({
           );
           break;
         case "AVAILABLE_FILTER":
-          console.log(action.payload.data);
           state.filteredWarehouses = state.originalWarehouses.filter(
             (warehouse) => action.payload.data === warehouse.is_live
           );
@@ -41,10 +40,16 @@ export const warehouseSlice = createSlice({
     fetchWarehousesStore: (state, action) => {
       state.originalWarehouses = action.payload.data;
     },
+    resetWarehouseStore: (state) => {
+      state.filteredWarehouses = state.originalWarehouses;
+    },
   },
 });
 
-export const { filterWarehousesStore, fetchWarehousesStore } =
-  warehouseSlice.actions;
+export const {
+  filterWarehousesStore,
+  fetchWarehousesStore,
+  resetWarehouseStore,
+} = warehouseSlice.actions;
 
 export default warehouseSlice.reducer;

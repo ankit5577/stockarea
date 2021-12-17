@@ -1,12 +1,14 @@
 import React from "react";
 import style from "./Navbar.module.css";
-import { Link } from "react-router-dom";
 import { GiHamburgerMenu } from "react-icons/gi";
 import { FaWarehouse } from "react-icons/fa";
 import { AiFillHome } from "react-icons/ai";
 import { useNavigate } from "react-router";
 
-import { filterWarehousesStore } from "../../services/warehouse/warehouseSlice";
+import {
+  filterWarehousesStore,
+  resetWarehouseStore,
+} from "../../services/warehouse/warehouseSlice";
 import { useDispatch } from "react-redux";
 
 var stockarea_search_timeout;
@@ -15,6 +17,7 @@ function Navbar(props) {
   const navigate = useNavigate();
 
   const navigateHome = () => {
+    dispatch(resetWarehouseStore());
     navigate("/");
   };
 

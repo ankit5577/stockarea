@@ -17,7 +17,8 @@ export const warehouseSlice = createSlice({
             String(warehouse.space_available) +
             String(warehouse.code) +
             warehouse.type.trim().toLowerCase();
-          return searchWithin.includes(action.payload.data);
+          const condition = searchWithin.includes(action.payload.searchterm);
+          return condition;
         }
       );
     },

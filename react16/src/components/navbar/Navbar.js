@@ -22,7 +22,7 @@ function Navbar(props) {
     dispatch(
       filterWarehousesStore({
         type: "SEARCH_PRODUCT",
-        data: data.trim().toLowerCase(),
+        searchterm: data.trim().toLowerCase(),
       })
     );
   };

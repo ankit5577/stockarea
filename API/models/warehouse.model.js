@@ -15,6 +15,11 @@ const WarehouseSchema = new mongoose.Schema({
     type: Number,
     required: [true, "id field is required"],
   },
+  img: {
+    type: String,
+    required: false,
+    default: "https://stockarea.io/assets/user/images/home/storage.jpg",
+  },
   city: {
     type: String,
     trim: true,

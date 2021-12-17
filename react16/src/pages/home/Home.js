@@ -12,6 +12,7 @@ function HomePage() {
     sendRequest: fetchWarehouse,
   } = useHttp("/warehouse/all", {}, (data) => {
     setWarehouses(() => data);
+    console.log(data);
   });
 
   useEffect(() => {

@@ -191,6 +191,15 @@ function WarehouseDetailsPage() {
                     />
                   </div>
                   <div>
+                    <label htmlFor="img">Image</label>
+                    <input
+                      name="img"
+                      onKeyUp={(e) => updateFormHandler(e.target)}
+                      placeholder={updatedWarehouse.img}
+                      id="img"
+                    />
+                  </div>
+                  <div>
                     <label htmlFor="available_space">Available Space</label>
                     <input
                       name="available_space"

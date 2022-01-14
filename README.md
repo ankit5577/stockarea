@@ -5,7 +5,7 @@
     <h1 align="center">Stockarea</h1>
   </a>
 
-  <h3 align="center">Stockarea frontend</h3>
+  <h3 align="center">Stockarea: frontend assignment</h3>
 
   <p align="center">
     <a href="https://stockarea-frontend.herokuapp.com">View Demo</a>

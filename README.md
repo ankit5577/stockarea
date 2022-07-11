@@ -11,7 +11,7 @@
     <a href="https://stockarea-frontend.herokuapp.com">View Demo</a>
   </p>
 </p>
-
+ 
 <!-- TABLE OF CONTENTS -->
 <details open="open">
   <summary>Table of Contents</summary>
